@@ -8,7 +8,31 @@
     <artifactId>ibb_ecodation_javacore</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+
+    <!--
+        war: java EE için kullanalım. JSP,servlet,html,css3
+        jar: Spring Boot için kullanalım
+        -->
+    <!--apache tomcat manuel için war ekliyorum-->
+    <!--<packaging>war</packaging>-->
+    <packaging>jar</packaging>
+
+
     <properties>
+
         <encoding>UTF-8</encoding>
         <java.version>23</java.version>
 
@@ -16,14 +40,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!--Maven Compiler için Gerekli-->
+        <!--Maven Compiler-->
         <maven.compiler.release>23</maven.compiler.release>
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
+
     </properties>
 
     <!-- start dependencies -->
-
     <dependencies>
 
         <!-- RDBMS MYSQL-->
