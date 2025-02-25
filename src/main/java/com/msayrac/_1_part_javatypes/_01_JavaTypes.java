@@ -10,6 +10,7 @@ public class _01_JavaTypes {
     Birden fazla comment ekleyebiliriz.
      */
 
+
     public static void main(String[] args) {
         System.out.println("MSayrac ");
     } // end psvm
