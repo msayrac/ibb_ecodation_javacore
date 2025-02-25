@@ -1,0 +1,10 @@
+
+ctrl+/ => single comment
+shift+ctrl+/ => multiple comment
+ctrl+alt l => Beautify
+
+psvm + tab => public static void metod oluşturur
+
+sout => systom out println
+
+
