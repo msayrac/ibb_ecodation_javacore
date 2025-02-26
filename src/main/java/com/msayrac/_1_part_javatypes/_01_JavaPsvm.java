@@ -1,8 +1,6 @@
 package com.msayrac._1_part_javatypes;
 
-import javax.print.attribute.HashAttributeSet;
-
-public class _01_JavaTypes {
+public class _01_JavaPsvm {
 
     // single comment
     /*
