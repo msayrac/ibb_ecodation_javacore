@@ -7,4 +7,6 @@ psvm + tab => public static void metod oluşturur
 
 sout => systom out println
 
+fn shift f6 hepsini değiştir Rename all variables
+
 
