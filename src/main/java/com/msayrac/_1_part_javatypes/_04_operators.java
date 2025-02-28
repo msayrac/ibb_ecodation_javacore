@@ -52,6 +52,7 @@ public class _04_operators {
         System.out.println(Math.PI);
         System.out.println(Math.E);
 
+        // Compiler JVM JRM  and data type is studied
 
         //Escape character
 
