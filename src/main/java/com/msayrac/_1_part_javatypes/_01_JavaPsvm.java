@@ -7,9 +7,10 @@ public class _01_JavaPsvm {
     multiple comment
     Birden fazla comment ekleyebiliriz.
      */
+    
 
 
-    public static void main(String[] args) {
-        System.out.println("MSayrac ");
-    } // end psvm
+//    public static void main(String[] args) {
+//        System.out.println("MSayrac ");
+//    } // end psvm
 } // end class
