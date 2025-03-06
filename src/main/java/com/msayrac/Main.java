@@ -12,14 +12,39 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        Arac arac = new Arac("Toyota", "Corolla", 2022, 110);
-        Musteri musteri = new Musteri("Ahmet", "Yılmaz", 100, arac);
+//        Arac arac = new Arac("Toyota", "Corolla", 2022, 110);
+//        Musteri musteri = new Musteri("Ahmet", "Yılmaz", 100, arac);
+//        arac.bilgileriGoster();
+//        musteri.bilgileriGoster();
+//        musteri.bakiyeYeterliMi();
+//        musteri.bilgileriGoster();
+//        musteri.getBakiye();
 
-        arac.bilgileriGoster();
-        musteri.bilgileriGoster();
-        musteri.bakiyeYeterliMi();
-        musteri.bilgileriGoster();
-        musteri.getBakiye();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Bir sayı giriniz :");
+
+        int number = sc.nextInt();
+//        int number = 1;
+        switch (number) {
+            case 1:
+                System.out.println("Sayı 1 ");
+                break;
+            case 2:
+                System.out.println("sayı 2");
+            case 3:
+                System.out.println("satı 3");
+                break;
+            case 4:
+                System.out.println("Sayı 4");
+                break;
+            case 5:
+                System.out.println("Sayı 5");
+                break;
+            default:
+                System.out.println("Sayı 1 ve 5 dısındadır");
+                break;
+        }
 
 
     }
