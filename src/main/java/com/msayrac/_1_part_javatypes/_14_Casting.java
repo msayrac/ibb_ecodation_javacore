@@ -9,7 +9,6 @@ public class _14_Casting {
         int cast1int=100;
         double cast1double = cast1int;
         System.out.println(cast1double);
-
         int cast2int =12152154;
         byte cast2Byte = (byte)cast2int;
         System.out.println(cast2Byte);
