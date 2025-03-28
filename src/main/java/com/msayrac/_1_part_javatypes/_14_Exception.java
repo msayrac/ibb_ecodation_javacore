@@ -1,5 +1,6 @@
 package com.msayrac._1_part_javatypes;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class _14_Exception {
@@ -15,10 +16,13 @@ public class _14_Exception {
     }
 
     public static String nowFormat1() {
-        Date date = new Date();
-        String specialForm = "zaman : ".concat(String.valueOf(date.getHours())).concat(String.valueOf(date.getMinutes())).concat(String.valueOf(date.getSeconds())).toString();
 
-        return specialForm;
+        Date now = new Date();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String formatedDate = String.format("Şimdiki Zaman", sdf.format(now));
+        return new Date().toString() + " " + formatedDate;
 
 
     }
