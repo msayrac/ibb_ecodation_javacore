@@ -1,5 +1,7 @@
 package com.msayrac._2_week;
 
+import java.util.Scanner;
+
 public class _16_1Arrays {
 
     public static String[] arrayMethod1() {
@@ -14,10 +16,11 @@ public class _16_1Arrays {
 
         return city;
     }
-    public static void arrayMethod2(){
+
+    public static void arrayMethod2() {
         String[] city = arrayMethod1();
 
-        for ( String temp : city){
+        for (String temp : city) {
             System.out.println(temp);
         }
 
@@ -25,7 +28,15 @@ public class _16_1Arrays {
 
     public static void main(String[] args) {
 
-      arrayMethod2();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a positfe number : ");
+        int number =sc.nextInt();
+        int fac=1;
+
+        for (int i = 1; i <= number; i++) {
+            fac*=i;
+        }
+        System.out.println(fac);
 
 
     }
