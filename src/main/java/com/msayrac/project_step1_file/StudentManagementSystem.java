@@ -1,7 +1,10 @@
 package com.msayrac.project_step1_file;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
 
 // Öğrenci yönetim sistemi
 public class StudentManagementSystem {
@@ -117,7 +120,68 @@ public class StudentManagementSystem {
     // ögrenci not ortalaması hesapla
     // en yuksek veya en dusuk not alan ogrenci
     // ögrenci sıralaması (dogun gunu)
+
     // console secim (ogrenci ekle)
+    public void chooice() {
+        Scanner scanner = new Scanner(System.in);
+        StudentManagementSystem studentManagementSystem = new StudentManagementSystem();
+        while (true) {
+            System.out.println("\n1.Öğrenci Ekle");
+            System.out.println("\n2.Öğrenci Listele");
+            System.out.println("\n3.Öğrenci Are");
+            System.out.println("\n4.Öğrenci Güncelle");
+            System.out.println("\n5.Öğrenci Sil");
+            System.out.println("\n6.Toplam öğrenci sayısı");
+            System.out.println("\n7.Rastgele öğrenci seçimi");
+            System.out.println("\n8.Öğrenci not hesapla");
+            System.out.println("\n9.Öğrenci en yüksek, en düşük notları göster");
+            System.out.println("\n10.Öğrenci sıralaması doğum gününe göre göster");
+            System.out.println("\n11.Çıkış");
+            System.out.println("\nLütfen Seçiminizi Yapınız");
+
+            int chooice = scanner.nextInt();
+            scanner.nextLine(); // durma yerimiz
+            StudentDto studentDto = new StudentDto();
+
+            String name, surname;
+            String birthday;
+            double grade;
+
+            switch (chooice) {
+                case 1:
+                    System.out.println("Öğrenci Adı : ");
+                    name = scanner.nextLine();
+
+                    System.out.println("Öğrenci Soyadı : ");
+                    surname = scanner.nextLine();
+
+                    System.out.println("Öğrenci Doğum tarihi : ");
+                    birthday = scanner.nextLine().toString();
+
+                    System.out.println("Öğrenci Puanı : ");
+                    grade = scanner.nextDouble();
+
+                    studentDto.setId(studentCounter);
+                    studentDto.setName(name);
+                    studentDto.setSurname(surname);
+                    studentDto.setCreatedDate(new Date(System.currentTimeMillis()));
+                    studentDto.setBirthday(LocalDate.parse(birthday));
+                    studentDto.setGrade(grade);
+
+                    studentManagementSystem.add(studentDto);
+                    break;
+
+                case 2:
+                    studentManagementSystem.list();
+                    break;
+
+
+            }
+
+
+        }
+
+    }
 
 
 }
