@@ -26,9 +26,14 @@ public class StudentManagementSystem {
         loadStudentListFromFile();
     }
 
+    public StudentManagementSystem(ArrayList<StudentDto> studentDtoList, int studentCounter) {
+        this.studentDtoList = studentDtoList;
+        this.studentCounter = studentCounter;
+    }
+
     //ögrenci ekle
     public void add(StudentDto dto) {
-        studentDtoList.add(new StudentDto(++studentCounter, dto.getName(), dto.getSurname(), dto.getBirthday(), dto.getGrade()));
+        studentDtoList.add(new StudentDto(++studentCounter, dto.getName(), dto.getSurname(), dto.getBirthday());
         System.out.println(" Öğrenci eklendi. ");
         //File Ekle
         saveToFile();
@@ -91,6 +96,11 @@ public class StudentManagementSystem {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             try {
                 studentDtoList = (ArrayList<StudentDto>) objectInputStream.readObject();
+                studentCounter = studentDtoList.size();
+                System.out.println("Dosyadan yüklenne öğrenci sayısı : " +studentCounter);
+            } catch (FileNotFoundException e) {
+                System.out.println("Dosyadan yüklenen öğrenci kaydı bulunamadı");
+                throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
@@ -108,19 +118,7 @@ public class StudentManagementSystem {
     }
 
 
-    // ////////////////////////////////////////
-
-    // file create
-    // ogrenci dosyaalrını kaydeden metod
-    // ogrenci dosyalarını okuyan metod
-
-    // ////////////////////////////////////////
-
-    // toplam ogrenci sayısı
-    // ögrenci not ortalaması hesapla
-    // en yuksek veya en dusuk not alan ogrenci
-    // ögrenci sıralaması (dogun gunu)
-
+    // ///////////////////////////////////////
     // console secim (ogrenci ekle)
     public void chooice() {
         Scanner scanner = new Scanner(System.in);
@@ -166,7 +164,6 @@ public class StudentManagementSystem {
                     studentDto.setSurname(surname);
                     studentDto.setCreatedDate(new Date(System.currentTimeMillis()));
                     studentDto.setBirthday(LocalDate.parse(birthday));
-                    studentDto.setGrade(grade);
 
                     studentManagementSystem.add(studentDto);
                     break;
@@ -174,14 +171,8 @@ public class StudentManagementSystem {
                 case 2:
                     studentManagementSystem.list();
                     break;
-
-
             }
-
-
         }
-
     }
-
 
 }

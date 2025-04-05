@@ -22,26 +22,44 @@ public class StudentDto implements Serializable {
     private Integer id;
     private String name;
     private String surname;
+    private Double midTerm;
+    private Double finalTerm;
+    private Double resultTerm;
+
     private LocalDate birthday;
     private Date createdDate;
-    private Double grade;
 
     // static nesne boyunca bir kere oluşturulur
     static {
-
+        System.out.println("studentDto yüklendi");
     }
 
     // parametresiz constructor
     public StudentDto() {
+
+
     }
 
     //Parametreli constructor
-    public StudentDto(Integer id, String name, String surname, LocalDate birthday, Double grade) {
+    public StudentDto(Integer id, String name, String surname, Double midTerm, Double finalTerm, LocalDate birthday) {
         this.id = id;
         this.name = name;
         this.surname = surname;
+        this.midTerm = midTerm;
+        this.finalTerm = finalTerm;
         this.birthday = birthday;
-        this.grade = grade;
+        this.resultTerm = calculateResult();
+    }
+
+    private Double calculateResult() {
+
+        if (midTerm == null || finalTerm == null) {
+            return 0.0;
+        } else {
+            return (midTerm * 0.4 + finalTerm * 0.6);
+        }
+
+
     }
 
 
@@ -89,13 +107,30 @@ public class StudentDto implements Serializable {
         this.createdDate = createdDate;
     }
 
-    public Double getGrade() {
-        return grade;
+
+    public Double getMidTerm() {
+        return midTerm;
     }
 
-    public void setGrade(Double grade) {
-        this.grade = grade;
+    public void setMidTerm(Double midTerm) {
+        this.midTerm = midTerm;
+        this.resultTerm = calculateResult();
     }
 
+    public Double getFinalTerm() {
+        return finalTerm;
+    }
 
+    public void setFinalTerm(Double finalTerm) {
+        this.finalTerm = finalTerm;
+        this.resultTerm = calculateResult();
+    }
+
+    public Double getResultTerm() {
+        return resultTerm;
+    }
+
+    public void setResultTerm(Double resultTerm) {
+        this.resultTerm = resultTerm;
+    }
 }
